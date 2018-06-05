@@ -55,13 +55,15 @@ void main(int argc, char **argv) {
 }
 
 void parse_arguments(int argc, char **argv) {
-    // can be made more elegant, namely by using getopt.h
+    // TODO can be made more elegant, namely by using getopt.h
     if (argc != 2) {
         printf("Must submit TSP locations test file name as argument.\n");
         exit(0);
     } else {
         strcpy(cities_file, argv[1]);
+#ifdef DEBUG        
         printf("Given TSP locations test file is %s\n", cities_file);
+#endif
     }
 }
 
@@ -136,7 +138,7 @@ void init_distances_matrix() {
         distances_matrix[i] = calloc(CHROMOSOME_LENGTH, sizeof (float));
     }
 #ifdef DEBUG
-    print_distances_matrix();
+    print_distances_matrix();         
 #endif
     for (int i = 0; i < CHROMOSOME_LENGTH - 1; i++) {
         for (int j = i + 1; j < CHROMOSOME_LENGTH; j++) {
