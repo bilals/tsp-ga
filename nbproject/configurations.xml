@@ -35,6 +35,14 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <commandlineTool>gcc</commandlineTool>
+        </cTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="ser_tsp_ga.c" ex="false" tool="0" flavor2="0">
       </item>
